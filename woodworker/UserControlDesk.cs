@@ -56,9 +56,9 @@ public partial class UserControlDesk : UserControl {
 
         ///////////////////////////////////////////
         var 隔板 = new CutPiece("桌子隔板");
-        隔板.Notes = "";
+        隔板.Notes = "内缩一个板厚度做免拉手抽屉";
         隔板.长度 = 总长 - 左脚腿桌边距 - 右脚腿桌边距 - 木板厚度 * 2;
-        隔板.宽度 = 总宽 - 排线孔宽 - 木板厚度 - 木板厚度;   // 内缩一个板厚度做免拉手抽屉
+        隔板.宽度 = 总宽 - 排线孔宽 - 木板厚度 - 木板厚度;
         隔板.Quantity = 1;
         cutPieces.Add(隔板);
         ///////////////////////////////////////////
@@ -87,6 +87,7 @@ public partial class UserControlDesk : UserControl {
         cutPieces.Add(抽屉面板);
 
         var 抽屉底板 = new CutPiece("桌子抽屉底板");
+        抽屉底板.Notes = "底板用背板材料（6mm）";
         抽屉底板.长度 = 隔板.宽度 - 5; // 预留5mm空间，以免推不进去
         抽屉底板.宽度 = (隔板.长度 - (抽屉数量 - 1) * 木板厚度) / 抽屉数量 - 滑轨预留空间;
         抽屉底板.Quantity = 抽屉数量;
