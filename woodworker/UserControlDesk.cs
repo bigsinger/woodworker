@@ -2,8 +2,6 @@
     public partial class UserControlDesk : UserControl {
         const int 木板厚度 = 18;                    // 木板厚度为18mm
         const int 踢脚板厚度 = 30;                   // 踢脚线厚度为30mm
-        const int 左脚腿桌边距 = 30;                // 30mm
-        const int 右脚腿桌边距 = 300;             // 30mm
         const int 排线孔宽 = 50;                    // 50mm
         const int 面板之间缝隙 = 2;                //2mm 
         const int 单个封边条厚度 = 2;                //2mm 准确的话是1.5mm，取整数2mm
@@ -16,12 +14,15 @@
         }
 
         void InitControls() {
+            this.Dock = DockStyle.Fill;
             txtResult.Multiline = true;
             txtLong.Text = "1425";
             txtWidth.Text = "450";
             txtHeight.Text = "750";
             txt抽屉数量.Text = "3";
             txt抽屉高度.Text = "130";
+            txt左脚腿桌边距.Text = 踢脚板厚度.ToString();
+            txt右脚腿桌边距.Text = 踢脚板厚度.ToString();
         }
 
         private void btnStart_Click(object sender, EventArgs e) {
@@ -30,6 +31,8 @@
             int 总高 = Int32.Parse(txtHeight.Text);
             int 抽屉数量 = Int32.Parse(txt抽屉数量.Text);
             int 抽屉高度 = Int32.Parse(txt抽屉高度.Text);
+            int 左脚腿桌边距 = Int32.Parse(txt左脚腿桌边距.Text);
+            int 右脚腿桌边距 = Int32.Parse(txt右脚腿桌边距.Text);
 
             List<CutPiece> cutPieces = new();
 

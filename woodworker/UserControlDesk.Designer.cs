@@ -35,6 +35,10 @@
             txt抽屉数量 = new TextBox();
             label5 = new Label();
             txt抽屉高度 = new TextBox();
+            txt左脚腿桌边距 = new TextBox();
+            label6 = new Label();
+            label7 = new Label();
+            txt右脚腿桌边距 = new TextBox();
             SuspendLayout();
             // 
             // txtLong
@@ -107,7 +111,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(11, 59);
+            label4.Location = new Point(35, 70);
             label4.Name = "label4";
             label4.Size = new Size(68, 17);
             label4.TabIndex = 9;
@@ -115,7 +119,7 @@
             // 
             // txt抽屉数量
             // 
-            txt抽屉数量.Location = new Point(77, 56);
+            txt抽屉数量.Location = new Point(109, 70);
             txt抽屉数量.Name = "txt抽屉数量";
             txt抽屉数量.Size = new Size(72, 23);
             txt抽屉数量.TabIndex = 8;
@@ -123,7 +127,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(165, 59);
+            label5.Location = new Point(237, 76);
             label5.Name = "label5";
             label5.Size = new Size(68, 17);
             label5.TabIndex = 11;
@@ -131,16 +135,52 @@
             // 
             // txt抽屉高度
             // 
-            txt抽屉高度.Location = new Point(231, 56);
+            txt抽屉高度.Location = new Point(303, 73);
             txt抽屉高度.Name = "txt抽屉高度";
             txt抽屉高度.Size = new Size(72, 23);
             txt抽屉高度.TabIndex = 10;
+            // 
+            // txt左脚腿桌边距
+            // 
+            txt左脚腿桌边距.Location = new Point(109, 44);
+            txt左脚腿桌边距.Name = "txt左脚腿桌边距";
+            txt左脚腿桌边距.Size = new Size(72, 23);
+            txt左脚腿桌边距.TabIndex = 10;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(11, 47);
+            label6.Name = "label6";
+            label6.Size = new Size(92, 17);
+            label6.TabIndex = 11;
+            label6.Text = "左脚腿桌边距：";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(211, 50);
+            label7.Name = "label7";
+            label7.Size = new Size(92, 17);
+            label7.TabIndex = 13;
+            label7.Text = "右脚腿桌边距：";
+            // 
+            // txt右脚腿桌边距
+            // 
+            txt右脚腿桌边距.Location = new Point(303, 47);
+            txt右脚腿桌边距.Name = "txt右脚腿桌边距";
+            txt右脚腿桌边距.Size = new Size(72, 23);
+            txt右脚腿桌边距.TabIndex = 12;
             // 
             // UserControlDesk
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label7);
+            Controls.Add(txt右脚腿桌边距);
+            Controls.Add(label6);
             Controls.Add(label5);
+            Controls.Add(txt左脚腿桌边距);
             Controls.Add(txt抽屉高度);
             Controls.Add(label4);
             Controls.Add(txt抽屉数量);
@@ -172,5 +212,9 @@
         private TextBox txt抽屉数量;
         private Label label5;
         private TextBox txt抽屉高度;
+        private TextBox txt左脚腿桌边距;
+        private Label label6;
+        private Label label7;
+        private TextBox txt右脚腿桌边距;
     }
 }
