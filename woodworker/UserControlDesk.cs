@@ -7,6 +7,7 @@ public partial class UserControlDesk : UserControl {
     const int 单个封边条厚度 = 2;                //2mm 准确的话是1.5mm，取整数2mm
     const int 两个个封边条厚度 = 3;                //3mm
     const int 滑轨预留空间 = 30;              // 滑轨实际需要>=26mm
+    const int 底板厚度 = 6;                         // 背板厚度为6mm
 
     public UserControlDesk() {
         InitializeComponent();
@@ -93,7 +94,7 @@ public partial class UserControlDesk : UserControl {
 
         var 抽屉围板前后 = new CutPiece("桌子抽屉围板前后");
         抽屉围板前后.长度 = 抽屉底板.宽度 - 木板厚度 * 2;
-        抽屉围板前后.宽度 = 抽屉高度 - 木板厚度 - 10;   // 上下预留10mm空间，以免推不进去
+        抽屉围板前后.宽度 = 抽屉高度 - 底板厚度 - 10;   // 上下预留10mm空间，以免推不进去
         抽屉围板前后.Quantity = 抽屉数量 * 2;
         cutPieces.Add(抽屉围板前后);
 
