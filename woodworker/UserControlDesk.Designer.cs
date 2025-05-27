@@ -30,7 +30,6 @@
             txtWidth = new TextBox();
             label3 = new Label();
             txtHeight = new TextBox();
-            txtResult = new TextBox();
             label4 = new Label();
             txt抽屉数量 = new TextBox();
             label5 = new Label();
@@ -98,15 +97,6 @@
             txtHeight.Name = "txtHeight";
             txtHeight.Size = new Size(100, 23);
             txtHeight.TabIndex = 5;
-            // 
-            // txtResult
-            // 
-            txtResult.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtResult.Location = new Point(11, 102);
-            txtResult.Multiline = true;
-            txtResult.Name = "txtResult";
-            txtResult.Size = new Size(556, 330);
-            txtResult.TabIndex = 7;
             // 
             // label4
             // 
@@ -184,7 +174,6 @@
             Controls.Add(txt抽屉高度);
             Controls.Add(label4);
             Controls.Add(txt抽屉数量);
-            Controls.Add(txtResult);
             Controls.Add(label3);
             Controls.Add(txtHeight);
             Controls.Add(label2);
@@ -193,7 +182,7 @@
             Controls.Add(btnStart);
             Controls.Add(txtLong);
             Name = "UserControlDesk";
-            Size = new Size(572, 435);
+            Size = new Size(572, 124);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -207,7 +196,6 @@
         private TextBox txtWidth;
         private Label label3;
         private TextBox txtHeight;
-        private TextBox txtResult;
         private Label label4;
         private TextBox txt抽屉数量;
         private Label label5;
