@@ -74,9 +74,9 @@ public partial class UserControlDrawer : UserControl {
 
         var 左右围板 = new CutPiece("左右围板");
         左右围板.长度 = 净深 - 5;
-        左右围板.宽度 = 净高 - 10;
+        左右围板.宽度 = 净高 - 5;
         左右围板.Quantity = 抽屉数量 * 2;
-        左右围板.Notes = "F30直钉固定即可";
+        左右围板.Notes = "需开槽内嵌底板";
         cutPieces.Add(左右围板);
 
         var 底板 = new CutPiece("抽屉底板");
@@ -90,9 +90,13 @@ public partial class UserControlDrawer : UserControl {
         前后围板.长度 = 左右围板.宽度;
         前后围板.宽度 = 底板.宽度;
         前后围板.Quantity = 抽屉数量 * 2;
-        前后围板.Notes = "";
+        前后围板.Notes = "需开槽内嵌底板";
         cutPieces.Add(前后围板);
 
+        // 修正底板尺寸，使其内嵌在围板开槽中
+        ///////////////////////////////////////////
+        底板.长度 += 木板厚度;
+        底板.宽度 += 木板厚度;
         ///////////////////////////////////////////
         string result = string.Empty;
         result += $"【抽屉设计】：\r\n净高: {净高}mm, 净宽: {净宽}mm, 净深: {净深}mm, 滑轨预留空间: {滑轨预留空间}mm\r\n";
