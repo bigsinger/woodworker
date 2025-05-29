@@ -16,6 +16,7 @@ public partial class FormMain : Form {
         tabControlMain.TabPages.Clear();
         tabControlMain.TabPages.Add(new TabPage("书桌") { Controls = { new UserControlDesk() } });
         tabControlMain.TabPages.Add(new TabPage("抽屉") { Controls = { new UserControlDrawer() } });
+        tabControlMain.TabPages.Add(new TabPage("免拉手槽") { Controls = { new UserControl免拉手槽() } });
         tabControlMain.TabPages.Add(new TabPage("待开放") { });
         txtResult.Multiline = true;
         txtResult.ScrollBars = ScrollBars.Vertical;
