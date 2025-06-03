@@ -2,7 +2,7 @@
 public partial class UserControlDrawer : UserControl {
     const int 木板厚度 = 18;                        // 木板厚度为18mm
     const int 底板厚度 = 6;                         // 背板厚度为6mm
-    const int 滑轨预留空间 = 30;                      // 滑轨实际需要>=26mm
+    const int 滑轨预留空间 = 26;                      // 滑轨实际需要>=25mm 再预留1mm
 
 
     public UserControlDrawer() {
@@ -38,7 +38,7 @@ public partial class UserControlDrawer : UserControl {
 
         var 前后围板 = new CutPiece("前后围板");
         前后围板.长度 = 底板.宽度 - 木板厚度 * 2;
-        前后围板.宽度 = 净高 - 底板厚度 - 10;   // 上下预留10mm空间，以免推不进去
+        前后围板.宽度 = 净高 - 底板厚度 - 15;   // 上下预留15mm空间，以免推不进去，滑轨安装好后默认底部会悬空1cm高
         前后围板.Quantity = 抽屉数量 * 2;
         前后围板.Notes = "前后围板顶边最好封边";
         cutPieces.Add(前后围板);

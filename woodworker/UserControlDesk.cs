@@ -5,7 +5,7 @@ public partial class UserControlDesk : UserControl {
     const int 排线孔宽 = 50;                    // 50mm
     const int 面板之间缝隙 = 2;                //2mm 
     const int 单个封边条厚度 = 2;                //2mm 准确的话是1.5mm，取整数2mm
-    const int 两个个封边条厚度 = 3;                //3mm
+    const int 两个封边条厚度 = 3;                //3mm
     const int 滑轨预留空间 = 30;              // 滑轨实际需要>=26mm
     const int 底板厚度 = 6;                         // 背板厚度为6mm
 
@@ -70,6 +70,16 @@ public partial class UserControlDesk : UserControl {
         立板.Quantity = 抽屉数量 - 1;
         cutPieces.Add(立板);
 
+        ///////////////////////////////////////////
+
+        var 支撑 = new CutPiece("桌子支撑");
+        支撑.长度 = 隔板.长度;
+        支撑.宽度 = 50;
+        支撑.Quantity = 1;
+        支撑.Notes = "组装时建议离地高8-10cm，宽度5~10cm，使用边角料即可，无须单独开料。若桌子两侧有依靠物稳定可以不用支撑，若无需要增加支撑否则摇晃不稳。";
+        cutPieces.Add(支撑);
+
+        ///////////////////////////////////////////
 
         var 抽屉背板 = new CutPiece("桌子抽屉背板");
         抽屉背板.Notes = "";
@@ -81,7 +91,7 @@ public partial class UserControlDesk : UserControl {
 
         var 抽屉面板 = new CutPiece("桌子抽屉面板");
         抽屉面板.Notes = "抽屉面板宽 = 小立板高 + 板厚 + 1.2cm (免拉手)";
-        抽屉面板.长度 = (隔板.长度 - (抽屉数量 + 1) * 面板之间缝隙) / 抽屉数量 - 两个个封边条厚度;
+        抽屉面板.长度 = (隔板.长度 - (抽屉数量 + 1) * 面板之间缝隙) / 抽屉数量 - 两个封边条厚度;
         抽屉面板.宽度 = 抽屉高度 + 木板厚度 + 12;
         抽屉面板.Quantity = 抽屉数量;
         cutPieces.Add(抽屉面板);
@@ -104,6 +114,7 @@ public partial class UserControlDesk : UserControl {
         抽屉围板左右.宽度 = 抽屉围板前后.宽度;
         抽屉围板左右.Quantity = 抽屉数量 * 2;
         cutPieces.Add(抽屉围板左右);
+
 
         ///////////////////////////////////////////
         string result = string.Empty;
