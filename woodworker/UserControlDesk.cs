@@ -1,12 +1,12 @@
 ﻿namespace woodworker;
 public partial class UserControlDesk : UserControl {
-    const int 木板厚度 = 18;                    // 木板厚度为18mm
-    const int 踢脚板厚度 = 30;                   // 踢脚线厚度为30mm
-    const int 排线孔宽 = 50;                    // 50mm
-    const int 面板之间缝隙 = 2;                //2mm 
-    const int 单个封边条厚度 = 2;                //2mm 准确的话是1.5mm，取整数2mm
-    const int 两个封边条厚度 = 3;                //3mm
-    const int 滑轨预留空间 = 30;              // 滑轨实际需要>=26mm
+    const int 木板厚度 = 18;                        // 木板厚度为18mm
+    const int 踢脚板厚度 = 30;                       // 踢脚线厚度为30mm
+    const int 排线孔宽 = 50;                        // 50mm
+    const int 面板之间缝隙 = 2;                       //2mm 
+    const int 单个封边条厚度 = 2;                      //2mm 准确的话是1.5mm，取整数2mm
+    const int 两个封边条厚度 = 3;                      //3mm
+    const int 滑轨预留空间 = 30;                      // 滑轨实际需要>=26mm
     const int 底板厚度 = 6;                         // 背板厚度为6mm
 
     public UserControlDesk() {
@@ -33,6 +33,8 @@ public partial class UserControlDesk : UserControl {
         int 抽屉高度 = Int32.Parse(txt抽屉高度.Text);
         int 左脚腿桌边距 = Int32.Parse(txt左脚腿桌边距.Text);
         int 右脚腿桌边距 = Int32.Parse(txt右脚腿桌边距.Text);
+        bool 左侧板封闭 = check左侧板封闭.Checked;
+        bool 右侧板封闭 = check右侧板封闭.Checked;
 
         List<CutPiece> cutPieces = new();
 
@@ -46,12 +48,19 @@ public partial class UserControlDesk : UserControl {
         ///////////////////////////////////////////
 
         ///////////////////////////////////////////
-        var 侧板 = new CutPiece("桌子侧板");
-        侧板.Notes = "长度 = 总高 - 木板厚度; 宽度 = 总宽 - 踢脚线厚度; 侧板底部和外侧需要封边；";
-        侧板.长度 = 总高 - 木板厚度;
-        侧板.宽度 = 总宽 - 踢脚板厚度;
-        侧板.Quantity = 2;
-        cutPieces.Add(侧板);
+        var 左侧板 = new CutPiece("桌子左侧板");
+        左侧板.Notes = "长度 = 总高 - 木板厚度; 侧板底部和外侧需要封边；若见光建议封闭，若不见光建议不封闭；";
+        左侧板.长度 = 总高 - 木板厚度;
+        左侧板.宽度 = 总宽 - (左侧板封闭 ? 0 : 踢脚板厚度);
+        左侧板.Quantity = 1;
+        cutPieces.Add(左侧板);
+
+        var 右侧板 = new CutPiece("桌子右侧板");
+        右侧板.Notes = "长度 = 总高 - 木板厚度; 侧板底部和外侧需要封边；若见光建议封闭，若不见光建议不封闭；";
+        右侧板.长度 = 总高 - 木板厚度;
+        右侧板.宽度 = 总宽 - (右侧板封闭 ? 0 : 踢脚板厚度);
+        右侧板.Quantity = 1;
+        cutPieces.Add(右侧板);
         ///////////////////////////////////////////
 
         ///////////////////////////////////////////

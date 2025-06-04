@@ -38,6 +38,8 @@
             label6 = new Label();
             label7 = new Label();
             txt右脚腿桌边距 = new TextBox();
+            check左侧板封闭 = new CheckBox();
+            check右侧板封闭 = new CheckBox();
             SuspendLayout();
             // 
             // txtLong
@@ -49,9 +51,9 @@
             // 
             // btnStart
             // 
-            btnStart.Location = new Point(492, 12);
+            btnStart.Location = new Point(524, 21);
             btnStart.Name = "btnStart";
-            btnStart.Size = new Size(75, 29);
+            btnStart.Size = new Size(88, 78);
             btnStart.TabIndex = 1;
             btnStart.Text = "计算";
             btnStart.UseVisualStyleBackColor = true;
@@ -101,7 +103,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(35, 70);
+            label4.Location = new Point(35, 82);
             label4.Name = "label4";
             label4.Size = new Size(68, 17);
             label4.TabIndex = 9;
@@ -109,7 +111,7 @@
             // 
             // txt抽屉数量
             // 
-            txt抽屉数量.Location = new Point(109, 70);
+            txt抽屉数量.Location = new Point(109, 76);
             txt抽屉数量.Name = "txt抽屉数量";
             txt抽屉数量.Size = new Size(72, 23);
             txt抽屉数量.TabIndex = 8;
@@ -117,15 +119,15 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(237, 76);
+            label5.Location = new Point(219, 79);
             label5.Name = "label5";
-            label5.Size = new Size(68, 17);
+            label5.Size = new Size(128, 17);
             label5.TabIndex = 11;
-            label5.Text = "抽屉高度：";
+            label5.Text = "抽屉高度（立板高）：";
             // 
             // txt抽屉高度
             // 
-            txt抽屉高度.Location = new Point(303, 73);
+            txt抽屉高度.Location = new Point(353, 76);
             txt抽屉高度.Name = "txt抽屉高度";
             txt抽屉高度.Size = new Size(72, 23);
             txt抽屉高度.TabIndex = 10;
@@ -134,7 +136,7 @@
             // 
             txt左脚腿桌边距.Location = new Point(109, 44);
             txt左脚腿桌边距.Name = "txt左脚腿桌边距";
-            txt左脚腿桌边距.Size = new Size(72, 23);
+            txt左脚腿桌边距.Size = new Size(40, 23);
             txt左脚腿桌边距.TabIndex = 10;
             // 
             // label6
@@ -149,7 +151,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(211, 50);
+            label7.Location = new Point(263, 46);
             label7.Name = "label7";
             label7.Size = new Size(92, 17);
             label7.TabIndex = 13;
@@ -157,15 +159,37 @@
             // 
             // txt右脚腿桌边距
             // 
-            txt右脚腿桌边距.Location = new Point(303, 47);
+            txt右脚腿桌边距.Location = new Point(353, 44);
             txt右脚腿桌边距.Name = "txt右脚腿桌边距";
             txt右脚腿桌边距.Size = new Size(72, 23);
             txt右脚腿桌边距.TabIndex = 12;
+            // 
+            // check左侧板封闭
+            // 
+            check左侧板封闭.AutoSize = true;
+            check左侧板封闭.Location = new Point(165, 45);
+            check左侧板封闭.Name = "check左侧板封闭";
+            check左侧板封闭.Size = new Size(87, 21);
+            check左侧板封闭.TabIndex = 14;
+            check左侧板封闭.Text = "左侧板封闭";
+            check左侧板封闭.UseVisualStyleBackColor = true;
+            // 
+            // check右侧板封闭
+            // 
+            check右侧板封闭.AutoSize = true;
+            check右侧板封闭.Location = new Point(431, 47);
+            check右侧板封闭.Name = "check右侧板封闭";
+            check右侧板封闭.Size = new Size(87, 21);
+            check右侧板封闭.TabIndex = 15;
+            check右侧板封闭.Text = "右侧板封闭";
+            check右侧板封闭.UseVisualStyleBackColor = true;
             // 
             // UserControlDesk
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(check右侧板封闭);
+            Controls.Add(check左侧板封闭);
             Controls.Add(label7);
             Controls.Add(txt右脚腿桌边距);
             Controls.Add(label6);
@@ -182,7 +206,7 @@
             Controls.Add(btnStart);
             Controls.Add(txtLong);
             Name = "UserControlDesk";
-            Size = new Size(572, 124);
+            Size = new Size(636, 124);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -204,5 +228,7 @@
         private Label label6;
         private Label label7;
         private TextBox txt右脚腿桌边距;
+        private CheckBox check左侧板封闭;
+        private CheckBox check右侧板封闭;
     }
 }
