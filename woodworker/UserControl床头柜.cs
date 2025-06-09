@@ -96,6 +96,14 @@ public partial class UserControl床头柜 : UserControl {
         下柜柜门.Notes = "四边封边；";
         cutPieces.Add(下柜柜门);
 
+
+        var 背板 = new CutPiece("背板");
+        背板.长度 = 总高 - 悬空高度 - 木板厚度; // 不到顶（不压顶板）
+        背板.宽度 = 总宽;
+        背板.Quantity = 1;
+        背板.Notes = "不压顶板；6mm背板；";
+        cutPieces.Add(背板);
+
         ///////////////////////////////////////////
         string result = string.Empty;
         result += $"【床头柜】：\r\n总高: {总高}mm, 总宽: {总宽}mm, 总深: {总深}mm, 悬空高度: {悬空高度}mm\r\n\r\n";
