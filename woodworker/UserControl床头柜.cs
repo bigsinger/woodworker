@@ -88,6 +88,13 @@ public partial class UserControl床头柜 : UserControl {
         上抽前后围板.Notes = "顶边封边；";
         cutPieces.Add(上抽前后围板);
 
+        var 上抽底板 = new CutPiece("上抽底板");
+        上抽底板.长度 = 上抽左右围板.长度;
+        上抽底板.宽度 = 上抽前后围板.长度 + 木板厚度 + 木板厚度;
+        上抽底板.Quantity = 1;
+        上抽底板.Notes = "使用背板材料（6mm）；";
+        cutPieces.Add(上抽底板);
+
 
         var 下柜柜门 = new CutPiece("下柜柜门");
         下柜柜门.长度 = 总宽;
