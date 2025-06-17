@@ -69,7 +69,7 @@ public partial class UserControl床头柜 : UserControl {
 
         var 上抽面板 = new CutPiece("上抽面板");
         上抽面板.长度 = 总宽;
-        上抽面板.宽度 = 抽屉净高 + 木板厚度 + (木板厚度 / 2) - 两个封边条厚度 - 1; // 与下柜的柜门让1mm
+        上抽面板.宽度 = 抽屉净高 + (木板厚度 / 2) - 两个封边条厚度 - 1; // 与下柜的柜门让1mm
         上抽面板.Quantity = 1;
         上抽面板.Notes = "四边封边；";
         cutPieces.Add(上抽面板);
